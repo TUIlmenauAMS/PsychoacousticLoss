@@ -14,14 +14,16 @@ import numpy as np
 from numpy.fft import fft, ifft
 import torch.nn as nn
 from asteroid.losses import SingleSrcMultiScaleSpectral, SingleSrcPMSQE
+from lsd_loss import LSDLoss
+from wmse_loss import WMSELoss
 
 
 class PsychoAcousticLoss(nn.Module):
-    def __init__(self, weight=None, size_average=True, n_fft=2048, return_complex=False,
+    def __init__(self, weight=None, size_average=True, n_fft=2048,
                  n_filts=64, fs=48000, alpha=0.8, mode="mse_time"):
         super(PsychoAcousticLoss, self).__init__()
         self.n_fft = n_fft
-        self.return_complex = return_complex
+        self.return_complex = False
         self.n_filts = n_filts
         self.fs = fs
         self.maxfreq = fs//2
@@ -227,6 +229,9 @@ class PsychoAcousticLoss(nn.Module):
         if self.mode == "l1":
             l1_loss = nn.L1Loss()
             return l1_loss(x_istft, y_istft)
+        if self.mode == "lsd":
+            lsd_loss = LSDLoss(n_fft=self.n_fft)
+            return lsd_loss(x_istft, y_istft)
 
 
 if __name__ == "__main__":
@@ -253,3 +258,21 @@ if __name__ == "__main__":
     print('psychoLoss multiscale:', psychoLoss_multiscale(x1, y))
     print('ratio multiscale/psycho_multiscale:', loss_multiScaleSpectral(
         x1.unsqueeze(dim=0), y.unsqueeze(dim=0))/psychoLoss_multiscale(x1, y))
+
+    psychoLoss_lsd = PsychoAcousticLoss(mode="lsd")
+    print('psychoLoss lsd:', psychoLoss_lsd(x1, y))
+    loss_lsd = LSDLoss()
+    print('lsd:', loss_lsd(x1, y))
+    print('ratio:', loss_lsd(x1, y)/psychoLoss_lsd(x1, y))
+
+    import librosa
+    audio_wav, sr = librosa.load('Slash_Anastasia.wav', sr=None)
+    audio_aac, sr = librosa.load('Slash_Anastasia.aac', sr=None)
+    audio_mp3, sr = librosa.load('Slash_Anastasia.mp3', sr=None)
+    audio_aac = torch.from_numpy(audio_aac[:audio_wav.shape[-1], ])
+    audio_mp3 = torch.from_numpy(audio_mp3[:audio_wav.shape[-1], ])
+    audio_wav = torch.from_numpy(audio_wav)
+    wmse_loss = WMSELoss()
+    print(wmse_loss(audio_mp3, audio_wav))
+    psychoLoss_wmse = PsychoAcousticLoss(mode="wmse")
+    print(psychoLoss_wmse(audio_mp3, audio_wav))
