@@ -15,7 +15,6 @@ from numpy.fft import fft, ifft
 import torch.nn as nn
 from asteroid.losses import SingleSrcMultiScaleSpectral, SingleSrcPMSQE
 from lsd_loss import LSDLoss
-from wmse_loss import WMSELoss
 
 
 class PsychoAcousticLoss(nn.Module):
