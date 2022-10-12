@@ -214,9 +214,11 @@ class PsychoAcousticLoss(nn.Module):
         # Compute ISTFT of x
         x_istft = torch.istft(x_stft_mt, self.n_fft,
                               return_complex=self.return_complex)
+        x_istft/=torch.abs(x_istft).max()
         # Compute ISTFT of y
         y_istft = torch.istft(y_stft_mt, self.n_fft,
                               return_complex=self.return_complex)
+        y_istft/=torch.abs(y_istft).max()
 
         # Compute Difference
         if self.mode == "mse_time":
