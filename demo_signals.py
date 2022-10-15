@@ -37,21 +37,23 @@ x_fft_mag = 20*torch.log(torch.abs(torch.fft.rfft(x, norm='ortho'))+1e-12)
 y_fft_mag = 20*torch.log(torch.abs(torch.fft.rfft(y, norm='ortho'))+1e-12)
 
 # Signal
-audio_wav, sr_wav = librosa.load(
-    'Slash_Anastasia.wav', sr=None, duration=20, offset=36)
+audio_wav_original, sr_wav = librosa.load(
+    'Slash_Anastasia.wav', sr=None, duration=5, offset=36)
 audio_aac, sr_aac = librosa.load(
-    'Slash_Anastasia.aac', sr=None, duration=20, offset=36)
-audio_mp3, sr_mp3 = librosa.load(
-    'Slash_Anastasia.mp3', sr=None, duration=20, offset=36)
-audio_aac = torch.from_numpy(audio_aac[:audio_wav.shape[-1], ])
-audio_mp3 = torch.from_numpy(audio_mp3[:audio_wav.shape[-1], ])
-audio_wav = torch.from_numpy(audio_wav)
-audio_wav.requires_grad = True
-audio_mp3.requires_grad = True
+    'Slash_Anastasia.aac', sr=None, duration=5, offset=36)
+audio_mp3_128k, sr_mp3 = librosa.load(
+    'Slash_Anastasia.mp3', sr=None, duration=5, offset=36)
+audio_aac = torch.from_numpy(audio_aac[:audio_aac.shape[-1], ])
+audio_mp3_128k = torch.from_numpy(audio_mp3_128k[:audio_mp3_128k.shape[-1], ])
+audio_wav_original = torch.from_numpy(audio_wav_original)
+audio_wav_original.requires_grad = True
+audio_mp3_128k.requires_grad = True
 audio_aac.requires_grad = True
 wav_fft_mag = 20 * \
-    torch.log(torch.abs(torch.fft.rfft(audio_wav, norm='ortho', n=2**17))+1e-12)
+    torch.log(torch.abs(torch.fft.rfft(
+        audio_wav_original, norm='ortho', n=2**17))+1e-12)
 mp3_fft_mag = 20 * \
-    torch.log(torch.abs(torch.fft.rfft(audio_mp3, norm='ortho', n=2**17))+1e-12)
+    torch.log(torch.abs(torch.fft.rfft(
+        audio_mp3_128k, norm='ortho', n=2**17))+1e-12)
 aac_fft_mag = 20 * \
     torch.log(torch.abs(torch.fft.rfft(audio_aac, norm='ortho', n=2**17))+1e-12)
