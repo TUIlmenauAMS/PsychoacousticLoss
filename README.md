@@ -6,7 +6,7 @@ https://www.aes.org/technical/documentDownloads.cfm?docID=774
 ## Introduction slides:
 
 [![Google Colab](https://badgen.net/badge/Launch/on%20Google%20Colab/black?icon=terminal)](https://colab.research.google.com/github/TUIlmenauAMS/PsychoacousticLoss/blob/main/WorkshopIntroduction.ipynb)
-[![HTML](https://badgen.net/badge/View/html/black?icon=terminal)](https://tuilmenauams.github.io/PsychoacousticLoss/)
+
 
 ## Our section on perceptual loss functions, based on explicit or implicit psycho-acoustic models:
 
