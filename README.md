@@ -16,6 +16,5 @@ https://www.aes.org/technical/documentDownloads.cfm?docID=774
 ## Code examples for different perceptual evaluation functions:
 [![Google Colab](https://badgen.net/badge/Launch/on%20Google%20Colab/black?icon=terminal)](https://colab.research.google.com/github/TUIlmenauAMS/PsychoacousticLoss/blob/main/psycho_demo_aes22.ipynb)
 
-## Code for the psycho-acoustic adaptive pre-/post-filter:
-https://github.com/TUIlmenauAMS/AdaptivePrePostFilters
-
+### Find the code for the psycho-acoustic pre- and post-filters in:
+https://github.com/TUIlmenauAMS/Python-Audio-Coder 
