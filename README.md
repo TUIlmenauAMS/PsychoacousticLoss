@@ -19,5 +19,9 @@ https://www.aes.org/technical/documentDownloads.cfm?docID=774
 ### Find the code for the psycho-acoustic pre- and post-filters in:
 https://github.com/TUIlmenauAMS/Python-Audio-Coder 
 
-## The Colab Jupyter notebook for the perceptual loss function, using the psycho-acoustic model:
+## The Colab Jupyter notebook for the perceptual loss function, using the psycho-acoustic model, with comparisons and explanations:
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TUIlmenauAMS/PsychoacousticLoss/blob/main/psyacLoss.ipynb)
+
+##Only the perceptual loss function:
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]
+(https://colab.research.google.com/github/TUIlmenauAMS/PsychoacousticLoss/blob/main/onlyPsyacLoss.ipynb)
