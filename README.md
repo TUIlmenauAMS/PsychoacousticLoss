@@ -25,3 +25,6 @@ https://github.com/TUIlmenauAMS/Python-Audio-Coder
 ## Only the perceptual loss function:
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]
 (https://colab.research.google.com/github/TUIlmenauAMS/PsychoacousticLoss/blob/main/onlyPsyacLoss.ipynb)
+
+#Asilomar Conference on Signals, Systems, and Computers 2024 
+Our special session talk slides are Asilomar2024PsyacLossTalk.pdf
