@@ -5,4 +5,4 @@ These are the talks of our special session on "Perceptual and Higher Level Loss 
 Overview at at: https://cmsworkshops.com/Asilomar2024/view_session.php?SessionID=1126
 
 
-Gloria Dal Santo, Prawda Karolina, Aalto University, Finland; Sebastian Jiro Schlecht, Friedrich-Alexander-Universitat Erlangen-Nurnberg (FAU), Germany; Vesa Välimäki, Aalto University, Finland: "Similarity Metrics for Late Reverberation", similrir_GloriaDalSanto.pdf
+[Gloria Dal Santo, Prawda Karolina, Aalto University, Finland; Sebastian Jiro Schlecht, Friedrich-Alexander-Universitat Erlangen-Nurnberg (FAU), Germany; Vesa Välimäki, Aalto University, Finland: "Similarity Metrics for Late Reverberation",](similrir_GloriaDalSanto.pdf)
