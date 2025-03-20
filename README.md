@@ -30,7 +30,9 @@ https://github.com/TUIlmenauAMS/Python-Audio-Coder
 We organised a special session on "Perceptual and Higher Level Loss and Distance Functions for Audio and Acoustics", see an overview here:
 https://cmsworkshops.com/Asilomar2024/view_session.php?SessionID=1126
 
-Our special session talk slides are ["Asilomar2024PsyacLossTalk.pdf"](Asilomar2024PsyacLossTalk.pdf) in this repository, ["asilomar2024_report.pdf"](asilomar2024_report.pdf) is an overview of our special session.
+Our special session talk slides are ["Asilomar2024PsyacLossTalk.pdf"](Asilomar2024PsyacLossTalk.pdf) in this repository.
+
+["asilomar2024_report.pdf"](asilomar2024_report.pdf) is an overview of our special session, presented at Stanford University, Center for Computer Research in Music and Acoustics, in November 2024.
 
 All talks of the special session can be found in the subdirectory 
 https://github.com/TUIlmenauAMS/PsychoacousticLoss/tree/main/Asilomar2024SpecialSessionTalks
